@@ -1,62 +1,418 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TaxOne 전자세금계산서 - 국세청 표준 전자세금계산서 발행 및 통합 관리</title>
-    <meta name="description" content="국세청 표준 규격 전자세금계산서 실시간 작성, 매출/매입 관리대장, 공동인증서 전자서명 및 홈택스 즉시 전송 솔루션 (TaxOne)" />
-    <meta name="keywords" content="전자세금계산서, 세금계산서 작성, 국세청 홈택스, 수정세금계산서, 부가가치세, 매출세금계산서, 매입세금계산서, 공동인증서" />
-    <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://ais-pre-sb3gbfqvnrtwskctgt6l4d-755788480733.asia-northeast1.run.app/" />
-
-    <!-- 검색엔진 소유권 인증 메타태그 (네이버 실제 고유키 연동 완료) -->
-    <meta name="naver-site-verification" content="66f674e19652bc4ad3c6b76a93a77b12b5dedf41" />
-    <meta name="google-site-verification" content="google-taxone-verification-key" />
-    <meta name="daum-site-verification" content="daum-taxone-verification-key" />
-
-    <!-- 파비콘 (구글 검색창 로고 노출용) -->
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="apple-touch-icon" href="/favicon.svg" />
-
-    <!-- OpenGraph (카카오톡, 슬랙, 페이스북 공유 카드) -->
-    <meta property="og:site_name" content="TaxOne 전자세금계산서" />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="TaxOne 전자세금계산서 - 국세청 표준 전자세금계산서 발행 및 통합 관리" />
-    <meta property="og:description" content="국세청 표준 규격 전자세금계산서 실시간 작성, 매출/매입 관리대장, 공동인증서 전자서명 및 홈택스 즉시 전송 솔루션" />
-    <meta property="og:image" content="/favicon.svg" />
-
-    <!-- 폰트 로드 (Noto Sans KR, JetBrains Mono) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" rel="stylesheet">
-
-    <!-- Schema.org JSON-LD 구조화 데이터 (Google Rich Snippets) -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "WebSite",
-          "@id": "https://ais-pre-sb3gbfqvnrtwskctgt6l4d-755788480733.asia-northeast1.run.app/#website",
-          "url": "https://ais-pre-sb3gbfqvnrtwskctgt6l4d-755788480733.asia-northeast1.run.app/",
-          "name": "TaxOne 전자세금계산서",
-          "alternateName": ["TaxOne", "스마트 전자세금계산서", "텍스원"],
-          "description": "국세청 표준 규격 전자세금계산서 발행 및 통합 관리 시스템"
-        },
-        {
-          "@type": "WebApplication",
-          "@id": "https://ais-pre-sb3gbfqvnrtwskctgt6l4d-755788480733.asia-northeast1.run.app/#app",
-          "name": "TaxOne 전자세금계산서 솔루션",
-          "applicationCategory": "BusinessApplication",
-          "operatingSystem": "All",
-          "browserRequirements": "Requires JavaScript. Requires HTML5."
-        }
-      ]
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TaxOne - 국세청 표준 전자세금계산서 작성 및 발급</title>
+  
+  <!-- 검색엔진 최적화 (SEO) & 포털 사이트 소유권 확인 -->
+  <meta name="description" content="국세청 별지 제11호 서식 표준 전자세금계산서 작성, 공급자/공급받는자용 2단 양식, 부가세 자동계산, 공인인증 전자서명, 엑셀 내보내기" />
+  <meta name="keywords" content="전자세금계산서, 세금계산서 양식, 국세청 홈택스, 공급가액 계산기, 부가세 계산, 세금계산서 무료 작성, 사업자등록번호 조회" />
+  <meta name="author" content="TaxOne 시스템" />
+  <meta name="robots" content="index, follow" />
+  
+  <!-- 네이버 서치어드바이저 소유권 확인 메타 태그 (영구 등록 완료) -->
+  <meta name="naver-site-verification" content="66f674e19652bc4ad3c6b76a93a77b12b5dedf41" />
+  
+  <!-- OpenGraph (카카오톡, 페이스북, 네이버 블로그 미리보기) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="TaxOne 전자세금계산서 시스템" />
+  <meta property="og:description" content="국세청 표준 규격 전자세금계산서 간편 작성, 실시간 합계 계산, 인쇄 및 무료 발급 시스템" />
+  
+  <!-- Tailwind CSS & Lucide Icons CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  
+  <style>
+    body { font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif; }
+    @media print {
+      body * { visibility: hidden; }
+      #printable-area, #printable-area * { visibility: visible; }
+      #printable-area { position: absolute; left: 0; top: 0; width: 100%; margin: 0; padding: 0; }
+      .no-print { display: none !important; }
     }
-    </script>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+  </style>
+</head>
+<body class="bg-slate-100 text-slate-800 antialiased min-h-screen flex flex-col">
+
+  <!-- 헤더 네비게이션 -->
+  <header class="bg-white border-b border-slate-200 sticky top-0 z-30 shadow-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <div class="flex items-center space-x-3 cursor-pointer" onclick="switchTab('write')">
+        <div class="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center text-white shadow-md shadow-blue-500/20 font-black text-xl">
+          T
+        </div>
+        <div>
+          <div class="flex items-center space-x-2">
+            <span class="text-xl font-black tracking-tight text-slate-900">Tax<span class="text-blue-600">One</span></span>
+            <span class="px-2 py-0.5 text-[11px] font-bold rounded-full bg-blue-50 text-blue-700 border border-blue-200">국세청 표준서식</span>
+          </div>
+          <p class="text-xs text-slate-500 hidden sm:block">전자세금계산서 작성 · 발급 · 관리 플랫폼</p>
+        </div>
+      </div>
+
+      <nav class="flex items-center space-x-1 sm:space-x-2">
+        <button id="nav-btn-write" onclick="switchTab('write')" class="px-3 py-2 rounded-lg text-sm font-semibold text-blue-600 bg-blue-50 flex items-center space-x-1.5 transition-colors">
+          <i data-lucide="file-edit" class="w-4 h-4"></i>
+          <span>계산서 작성</span>
+        </button>
+        <button id="nav-btn-list" onclick="switchTab('list')" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 flex items-center space-x-1.5 transition-colors">
+          <i data-lucide="table" class="w-4 h-4"></i>
+          <span>발급 보관함</span>
+        </button>
+        <button onclick="openSeoModal()" class="px-3 py-2 rounded-lg text-sm font-medium text-emerald-700 hover:bg-emerald-50 flex items-center space-x-1.5 transition-colors border border-emerald-200 bg-emerald-50/50">
+          <i data-lucide="globe" class="w-4 h-4 text-emerald-600"></i>
+          <span class="hidden md:inline">네이버/구글 검색등록</span>
+          <span class="md:hidden">검색등록</span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 메인 본문 -->
+  <main class="flex-1 max-w-7xl w-full mx-auto p-4 sm:p-6 lg:p-8 space-y-6">
+    <!-- 작성 탭 -->
+    <div id="tab-write" class="space-y-6">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 bg-white p-4 sm:p-6 rounded-2xl border border-slate-200 shadow-xs">
+        <div>
+          <h1 class="text-xl sm:text-2xl font-black text-slate-900 tracking-tight">전자세금계산서 작성</h1>
+          <p class="text-xs sm:text-sm text-slate-500 mt-1">부가가치세법 시행규칙 별지 제11호 서식에 따른 정규 세금계산서 양식입니다.</p>
+        </div>
+        <div class="flex flex-wrap items-center gap-2">
+          <button onclick="toggleFormType()" id="type-toggle-btn" class="px-3.5 py-2 rounded-xl text-xs font-bold border border-red-200 bg-red-50 text-red-700 hover:bg-red-100 transition-colors flex items-center space-x-1.5">
+            <i data-lucide="repeat" class="w-3.5 h-3.5"></i>
+            <span id="current-type-label">공급자용 (적색)</span>
+          </button>
+          <button onclick="window.print()" class="px-3.5 py-2 rounded-xl text-xs font-bold border border-slate-200 bg-white hover:bg-slate-50 text-slate-700 flex items-center space-x-1.5 transition-colors">
+            <i data-lucide="printer" class="w-3.5 h-3.5"></i>
+            <span>인쇄 / PDF 저장</span>
+          </button>
+          <button onclick="openCertModal()" class="px-4 py-2 rounded-xl text-xs font-bold bg-blue-600 hover:bg-blue-700 text-white shadow-md shadow-blue-600/20 flex items-center space-x-1.5 transition-colors">
+            <i data-lucide="shield-check" class="w-3.5 h-3.5"></i>
+            <span>전자서명 발급하기</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- 세금계산서 서식 뷰 (인쇄 영역) -->
+      <div id="printable-area" class="bg-white rounded-2xl border-2 border-red-500 p-4 sm:p-6 shadow-sm overflow-x-auto">
+        <div class="min-w-[840px] space-y-4">
+          <!-- 상단 헤더 -->
+          <div class="border-b-2 border-red-500 pb-3 flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+              <span class="text-xs font-bold px-2 py-0.5 rounded bg-red-50 text-red-600 border border-red-200">별지 제11호 서식</span>
+              <span class="text-xs text-slate-400">승인번호: <span id="view-doc-no" class="font-mono text-slate-600 font-semibold">20261022-4100021-998821</span></span>
+            </div>
+            <h2 id="invoice-title" class="text-2xl font-black text-red-600 tracking-wider">세 금 계 산 서 <span class="text-sm font-semibold tracking-normal text-red-500">(공급자 보관용)</span></h2>
+            <div class="text-xs text-slate-400">관리번호: TAX-2026-0001</div>
+          </div>
+
+          <!-- 사업자 정보 테이블 (공급자 / 공급받는자) -->
+          <div class="grid grid-cols-2 gap-2 text-xs">
+            <!-- 공급자 (적색) -->
+            <div class="border border-red-300 rounded-lg overflow-hidden bg-red-50/20">
+              <div class="bg-red-500 text-white font-bold px-3 py-1 text-center">공 급 자</div>
+              <div class="p-2 space-y-1.5">
+                <div class="grid grid-cols-3 gap-1 items-center">
+                  <span class="text-slate-500 font-medium">등록번호</span>
+                  <input id="supplier-biz-no" value="120-88-12345" class="col-span-2 font-mono font-bold text-slate-800 bg-white border border-red-200 rounded px-2 py-1 outline-none" />
+                </div>
+                <div class="grid grid-cols-3 gap-1 items-center">
+                  <span class="text-slate-500 font-medium">상호(법인명)</span>
+                  <input id="supplier-name" value="(주)택스원솔루션" class="col-span-2 font-bold text-slate-800 bg-white border border-red-200 rounded px-2 py-1 outline-none" />
+                </div>
+                <div class="grid grid-cols-3 gap-1 items-center">
+                  <span class="text-slate-500 font-medium">성명(대표자)</span>
+                  <input id="supplier-ceo" value="홍길동" class="col-span-2 text-slate-800 bg-white border border-red-200 rounded px-2 py-1 outline-none" />
+                </div>
+                <div class="grid grid-cols-3 gap-1 items-center">
+                  <span class="text-slate-500 font-medium">사업장주소</span>
+                  <input id="supplier-addr" value="서울특별시 강남구 테헤란로 152, 12층" class="col-span-2 text-slate-800 bg-white border border-red-200 rounded px-2 py-1 outline-none" />
+                </div>
+              </div>
+            </div>
+
+            <!-- 공급받는자 (청색) -->
+            <div class="border border-blue-300 rounded-lg overflow-hidden bg-blue-50/20">
+              <div class="bg-blue-600 text-white font-bold px-3 py-1 text-center">공 급 받 는 자</div>
+              <div class="p-2 space-y-1.5">
+                <div class="grid grid-cols-3 gap-1 items-center">
+                  <span class="text-slate-500 font-medium">등록번호</span>
+                  <input id="buyer-biz-no" value="214-85-98765" class="col-span-2 font-mono font-bold text-slate-800 bg-white border border-blue-200 rounded px-2 py-1 outline-none" />
+                </div>
+                <div class="grid grid-cols-3 gap-1 items-center">
+                  <span class="text-slate-500 font-medium">상호(법인명)</span>
+                  <input id="buyer-name" value="(주)한국엔터프라이즈" class="col-span-2 font-bold text-slate-800 bg-white border border-blue-200 rounded px-2 py-1 outline-none" />
+                </div>
+                <div class="grid grid-cols-3 gap-1 items-center">
+                  <span class="text-slate-500 font-medium">성명(대표자)</span>
+                  <input id="buyer-ceo" value="김영수" class="col-span-2 text-slate-800 bg-white border border-blue-200 rounded px-2 py-1 outline-none" />
+                </div>
+                <div class="grid grid-cols-3 gap-1 items-center">
+                  <span class="text-slate-500 font-medium">사업장주소</span>
+                  <input id="buyer-addr" value="경기도 성남시 분당구 판교역로 235" class="col-span-2 text-slate-800 bg-white border border-blue-200 rounded px-2 py-1 outline-none" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 금액 총괄 바 -->
+          <div class="border border-slate-300 rounded-lg p-2.5 bg-slate-50 flex items-center justify-between text-xs">
+            <div>
+              <span class="text-slate-500 font-medium">작성일자:</span>
+              <input type="date" id="write-date" value="2026-10-22" class="font-bold text-slate-800 bg-white border border-slate-200 rounded px-2 py-0.5 ml-1" />
+            </div>
+            <div>
+              <span class="text-slate-500 font-medium">공급가액:</span>
+              <span id="summary-supply" class="font-mono font-bold text-slate-900 ml-1 text-sm">₩10,000,000</span>
+            </div>
+            <div>
+              <span class="text-slate-500 font-medium">세액(VAT 10%):</span>
+              <span id="summary-tax" class="font-mono font-bold text-red-600 ml-1 text-sm">₩1,000,000</span>
+            </div>
+            <div>
+              <span class="text-slate-500 font-medium">총 합계금액:</span>
+              <span id="summary-total" class="font-mono font-black text-blue-700 ml-1 text-base">₩11,000,000</span>
+            </div>
+          </div>
+
+          <!-- 품목 테이블 -->
+          <table class="w-full text-xs text-center border-collapse border border-slate-200">
+            <thead class="bg-slate-100 font-bold text-slate-700 border-b border-slate-200">
+              <tr>
+                <th class="p-2 border border-slate-200 w-16">월/일</th>
+                <th class="p-2 border border-slate-200">품목 / 규격</th>
+                <th class="p-2 border border-slate-200 w-16">수량</th>
+                <th class="p-2 border border-slate-200 w-28">단가</th>
+                <th class="p-2 border border-slate-200 w-32">공급가액</th>
+                <th class="p-2 border border-slate-200 w-28">세액</th>
+                <th class="p-2 border border-slate-200 w-24">비고</th>
+              </tr>
+            </thead>
+            <tbody id="items-tbody">
+              <tr class="hover:bg-slate-50/50">
+                <td class="p-1 border border-slate-200"><input value="10/22" class="w-full text-center outline-none bg-transparent" /></td>
+                <td class="p-1 border border-slate-200"><input id="item-desc-0" value="소프트웨어 라이선스 공급 및 유지보수" class="w-full px-2 outline-none bg-transparent text-left" /></td>
+                <td class="p-1 border border-slate-200"><input id="item-qty-0" type="number" value="1" oninput="recalcInvoice()" class="w-full text-center outline-none bg-transparent" /></td>
+                <td class="p-1 border border-slate-200"><input id="item-unit-0" type="number" value="10000000" oninput="recalcInvoice()" class="w-full text-right px-2 outline-none bg-transparent font-mono" /></td>
+                <td class="p-1 border border-slate-200 font-mono font-bold text-right px-2 text-slate-800" id="item-supply-0">10,000,000</td>
+                <td class="p-1 border border-slate-200 font-mono font-bold text-right px-2 text-red-600" id="item-tax-0">1,000,000</td>
+                <td class="p-1 border border-slate-200"><input value="정기계약" class="w-full px-1 text-center outline-none bg-transparent text-slate-400" /></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <!-- 하단 대금 결제 구분 (현금, 수표, 어음, 외상미수금) -->
+          <div class="grid grid-cols-5 text-center text-xs border border-slate-200 rounded-lg overflow-hidden bg-slate-50 divide-x divide-slate-200">
+            <div class="p-2"><span class="text-slate-500 block mb-0.5">합계금액</span><span id="footer-total" class="font-mono font-bold text-slate-900">11,000,000</span></div>
+            <div class="p-2"><span class="text-slate-500 block mb-0.5">현금</span><span class="font-mono font-semibold text-slate-700">0</span></div>
+            <div class="p-2"><span class="text-slate-500 block mb-0.5">수표</span><span class="font-mono font-semibold text-slate-700">0</span></div>
+            <div class="p-2"><span class="text-slate-500 block mb-0.5">어음</span><span class="font-mono font-semibold text-slate-700">0</span></div>
+            <div class="p-2 bg-blue-50/50"><span class="text-blue-600 font-bold block mb-0.5">외상미수금</span><span id="footer-receivable" class="font-mono font-bold text-blue-700">11,000,000</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 발급 보관함 탭 -->
+    <div id="tab-list" class="hidden space-y-6">
+      <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div>
+          <h2 class="text-xl font-black text-slate-900">전자세금계산서 발급 원장</h2>
+          <p class="text-xs text-slate-500 mt-1">발급된 계산서 목록을 조회하고 엑셀(CSV)로 내려받습니다.</p>
+        </div>
+        <button onclick="downloadCSV()" class="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-bold flex items-center space-x-1.5 transition-colors">
+          <i data-lucide="download" class="w-4 h-4"></i>
+          <span>엑셀(CSV) 다운로드</span>
+        </button>
+      </div>
+
+      <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-xs">
+        <table class="w-full text-xs text-left">
+          <thead class="bg-slate-50 text-slate-500 font-bold border-b border-slate-200">
+            <tr>
+              <th class="p-3">작성일자</th>
+              <th class="p-3">상태</th>
+              <th class="p-3">공급받는자</th>
+              <th class="p-3">사업자번호</th>
+              <th class="p-3 text-right">공급가액</th>
+              <th class="p-3 text-right">세액</th>
+              <th class="p-3 text-right">합계금액</th>
+              <th class="p-3 text-center">관리</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100">
+            <tr class="hover:bg-slate-50/60">
+              <td class="p-3 font-mono font-medium">2026-10-22</td>
+              <td class="p-3"><span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-200">국세청 전송완료</span></td>
+              <td class="p-3 font-bold text-slate-900">(주)한국엔터프라이즈</td>
+              <td class="p-3 font-mono text-slate-500">214-85-98765</td>
+              <td class="p-3 font-mono text-right font-medium">₩10,000,000</td>
+              <td class="p-3 font-mono text-right text-red-600 font-medium">₩1,000,000</td>
+              <td class="p-3 font-mono text-right font-bold text-blue-600">₩11,000,000</td>
+              <td class="p-3 text-center">
+                <button onclick="switchTab('write')" class="px-2.5 py-1 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 font-medium">보기</button>
+              </td>
+            </tr>
+            <tr class="hover:bg-slate-50/60">
+              <td class="p-3 font-mono font-medium">2026-10-18</td>
+              <td class="p-3"><span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-blue-50 text-blue-700 border border-blue-200">발급완료</span></td>
+              <td class="p-3 font-bold text-slate-900">(주)미래소프트웨어</td>
+              <td class="p-3 font-mono text-slate-500">110-81-45678</td>
+              <td class="p-3 font-mono text-right font-medium">₩3,500,000</td>
+              <td class="p-3 font-mono text-right text-red-600 font-medium">₩350,000</td>
+              <td class="p-3 font-mono text-right font-bold text-blue-600">₩3,850,000</td>
+              <td class="p-3 text-center">
+                <button onclick="switchTab('write')" class="px-2.5 py-1 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 font-medium">보기</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <!-- 검색엔진 등록 모달 -->
+  <div id="seo-modal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-xs z-50 flex items-center justify-center p-4 hidden">
+    <div class="bg-white rounded-2xl max-w-lg w-full p-6 shadow-2xl border border-slate-200 space-y-4">
+      <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+        <div class="flex items-center space-x-2">
+          <div class="w-8 h-8 rounded-lg bg-emerald-100 flex items-center justify-center text-emerald-700">
+            <i data-lucide="globe" class="w-5 h-5"></i>
+          </div>
+          <h3 class="text-base font-bold text-slate-900">네이버 / 구글 검색 등록 가이드</h3>
+        </div>
+        <button onclick="closeSeoModal()" class="text-slate-400 hover:text-slate-600"><i data-lucide="x" class="w-5 h-5"></i></button>
+      </div>
+
+      <div class="p-3 rounded-xl bg-emerald-50 border border-emerald-200 text-xs text-emerald-800 space-y-1">
+        <p class="font-bold flex items-center space-x-1">
+          <i data-lucide="check-circle" class="w-4 h-4 text-emerald-600"></i>
+          <span>네이버 서치어드바이저 확인 코드 영구 탑재 완료!</span>
+        </p>
+        <p class="font-mono text-[11px] text-emerald-700">66f674e19652bc4ad3c6b76a93a77b12b5dedf41</p>
+      </div>
+
+      <div class="text-xs text-slate-600 space-y-2">
+        <p><strong>1. 네이버 서치어드바이저</strong>: 사이트 등록 후 [HTML 태그] 방식 선택 후 [확인] 클릭 시 즉시 소유권 인증 완료</p>
+        <p><strong>2. 구글 서치콘솔</strong>: URL 접두사 등록 후 자동 크롤링 시작</p>
+        <p><strong>3. 다음 카카오 검색등록</strong>: register.search.daum.net 에서 사이트 URL 제출</p>
+      </div>
+
+      <button onclick="closeSeoModal()" class="w-full py-2.5 bg-slate-900 hover:bg-slate-800 text-white rounded-xl text-xs font-bold transition-colors">
+        닫기
+      </button>
+    </div>
+  </div>
+
+  <!-- 전자서명 인증 모달 -->
+  <div id="cert-modal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-xs z-50 flex items-center justify-center p-4 hidden">
+    <div class="bg-white rounded-2xl max-w-sm w-full p-6 shadow-2xl border border-slate-200 text-center space-y-4">
+      <div class="w-14 h-14 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center mx-auto border-4 border-blue-100">
+        <i data-lucide="shield-check" class="w-8 h-8"></i>
+      </div>
+      <div>
+        <h3 class="text-lg font-black text-slate-900">전자세금계산서 서명</h3>
+        <p class="text-xs text-slate-500 mt-1">전자서명법에 따라 공인인증서로 서명 후 국세청에 발급 전송합니다.</p>
+      </div>
+      <div class="p-3 bg-slate-50 rounded-xl text-left text-xs space-y-1 text-slate-600 border border-slate-200">
+        <div><strong>발급자:</strong> (주)택스원솔루션</div>
+        <div><strong>인증기관:</strong> 한국정보인증(KICA)</div>
+        <div><strong>알고리즘:</strong> SHA256withRSA (2048bit)</div>
+      </div>
+      <div class="flex space-x-2">
+        <button onclick="closeCertModal()" class="flex-1 py-2 rounded-xl text-xs font-semibold bg-slate-100 text-slate-600 hover:bg-slate-200">취소</button>
+        <button onclick="completeSign()" class="flex-1 py-2 rounded-xl text-xs font-bold bg-blue-600 hover:bg-blue-700 text-white shadow-md shadow-blue-600/20">서명 및 전송</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 자바스크립트 로직 -->
+  <script>
+    lucide.createIcons();
+
+    let isSupplierMode = true;
+
+    function switchTab(tab) {
+      const tabWrite = document.getElementById('tab-write');
+      const tabList = document.getElementById('tab-list');
+      const btnWrite = document.getElementById('nav-btn-write');
+      const btnList = document.getElementById('nav-btn-list');
+
+      if (tab === 'write') {
+        tabWrite.classList.remove('hidden');
+        tabList.classList.add('hidden');
+        btnWrite.className = 'px-3 py-2 rounded-lg text-sm font-semibold text-blue-600 bg-blue-50 flex items-center space-x-1.5 transition-colors';
+        btnList.className = 'px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 flex items-center space-x-1.5 transition-colors';
+      } else {
+        tabWrite.classList.add('hidden');
+        tabList.classList.remove('hidden');
+        btnWrite.className = 'px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 flex items-center space-x-1.5 transition-colors';
+        btnList.className = 'px-3 py-2 rounded-lg text-sm font-semibold text-blue-600 bg-blue-50 flex items-center space-x-1.5 transition-colors';
+      }
+    }
+
+    function toggleFormType() {
+      isSupplierMode = !isSupplierMode;
+      const printable = document.getElementById('printable-area');
+      const title = document.getElementById('invoice-title');
+      const label = document.getElementById('current-type-label');
+      const btn = document.getElementById('type-toggle-btn');
+
+      if (isSupplierMode) {
+        printable.className = 'bg-white rounded-2xl border-2 border-red-500 p-4 sm:p-6 shadow-sm overflow-x-auto';
+        title.innerHTML = '세 금 계 산 서 <span class="text-sm font-semibold tracking-normal text-red-500">(공급자 보관용)</span>';
+        title.className = 'text-2xl font-black text-red-600 tracking-wider';
+        label.innerText = '공급자용 (적색)';
+        btn.className = 'px-3.5 py-2 rounded-xl text-xs font-bold border border-red-200 bg-red-50 text-red-700 hover:bg-red-100 transition-colors flex items-center space-x-1.5';
+      } else {
+        printable.className = 'bg-white rounded-2xl border-2 border-blue-500 p-4 sm:p-6 shadow-sm overflow-x-auto';
+        title.innerHTML = '세 금 계 산 서 <span class="text-sm font-semibold tracking-normal text-blue-500">(공급받는자 보관용)</span>';
+        title.className = 'text-2xl font-black text-blue-600 tracking-wider';
+        label.innerText = '공급받는자용 (청색)';
+        btn.className = 'px-3.5 py-2 rounded-xl text-xs font-bold border border-blue-200 bg-blue-50 text-blue-700 hover:bg-blue-100 transition-colors flex items-center space-x-1.5';
+      }
+    }
+
+    function recalcInvoice() {
+      const qty = parseFloat(document.getElementById('item-qty-0').value) || 0;
+      const unit = parseFloat(document.getElementById('item-unit-0').value) || 0;
+      const supply = Math.round(qty * unit);
+      const tax = Math.round(supply * 0.1);
+      const total = supply + tax;
+
+      document.getElementById('item-supply-0').innerText = supply.toLocaleString();
+      document.getElementById('item-tax-0').innerText = tax.toLocaleString();
+      document.getElementById('summary-supply').innerText = '₩' + supply.toLocaleString();
+      document.getElementById('summary-tax').innerText = '₩' + tax.toLocaleString();
+      document.getElementById('summary-total').innerText = '₩' + total.toLocaleString();
+      document.getElementById('footer-total').innerText = total.toLocaleString();
+      document.getElementById('footer-receivable').innerText = total.toLocaleString();
+    }
+
+    function openSeoModal() { document.getElementById('seo-modal').classList.remove('hidden'); }
+    function closeSeoModal() { document.getElementById('seo-modal').classList.add('hidden'); }
+    function openCertModal() { document.getElementById('cert-modal').classList.remove('hidden'); }
+    function closeCertModal() { document.getElementById('cert-modal').classList.add('hidden'); }
+
+    function completeSign() {
+      closeCertModal();
+      alert('공인인증서 전자서명이 완료되어 국세청으로 정상 전송되었습니다.\n승인번호: NTS-' + Date.now());
+      switchTab('list');
+    }
+
+    function downloadCSV() {
+      const csv = "\uFEFF작성일자,상태,공급받는자,사업자번호,공급가액,세액,합계금액\n2026-10-22,국세청전송완료,(주)한국엔터프라이즈,214-85-98765,10000000,1000000,11000000\n2026-10-18,발급완료,(주)미래소프트웨어,110-81-45678,3500000,350000,3850000\n";
+      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.setAttribute('href', url);
+      link.setAttribute('download', '전자세금계산서_발급목록_' + new Date().toISOString().slice(0, 10) + '.csv');
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+  </script>
+</body>
 </html>
